@@ -21,10 +21,11 @@ footer .column a.icon {
     line-height: 30px !important;
     font-size: 14px !important;
     color: #3399ff;
+    scale: 0.9;
 }
 
 footer .column a.icon:hover {
-    transform: scale(1.2);
+    scale: 1;
 }
 
 footer .column .footer_title {
@@ -40,7 +41,7 @@ footer .column a {
     font-size: 0.9em;
     padding: 5px 0;
     font-weight: 400;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 footer .column:not(:first-child) a:hover {
@@ -86,8 +87,8 @@ footer .column:nth-child(1) .fa-twitter {
     font-size: 12px;
 }
 
-footer .fas {
-    font-size: 14px;
+footer .fab {
+    font-size: 22px;
 }
 
 @media (max-width: 1100px) {
