@@ -78,7 +78,7 @@ nav {
     width: 40px;
     height: 40px;
     border-radius: 50% !important;
-    background: url(../images/img/logo.png);
+    background: url(../metadata/android-chrome-512x512.png);
     background-size: cover;
 }
 
