@@ -17,13 +17,13 @@ let navElement = document.querySelectorAll(".navEl"),
     promptMessage = document.getElementById("promptMessage"),
     india = document.getElementById("india"),
     e =
-    '<h1>Developed with ' +
-    '<span style="color: #006eff;"><i class = "fas fa-heart" style = "font-size: x-large;"></i> India' +
-    '</h1 ><br> ' +
-    '<h3>Research & Development in India</h3>' +
-    '<h4 class="fl flc p12 w100" id="closeIndia">' +
-    '<span class="p12 cp" style="color: red; border: 1px solid red; border-radius: 20px; width: 70%;">close</span>' +
-    '</h4>';
+        '<h1>Developed with ' +
+        '<span style="color: #006eff;"><i class = "fas fa-heart" style = "font-size: x-large; color: #e31b23"></i> in India' +
+        '</h1 ><br> ' +
+        '<h3>Research & Development in India</h3>' +
+        '<h4 class="fl flc p12 w100" id="closeIndia">' +
+        '<span class="p12 cp" style="color: red; border: 1px solid red; border-radius: 20px; width: 70%;">close</span>' +
+        '</h4>';
 
 toggle.addEventListener("click", toggleMenu);
 window.addEventListener("scroll", () => {
@@ -52,7 +52,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-var TxtType = function(el, toRotate, period) {
+var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -62,7 +62,7 @@ var TxtType = function(el, toRotate, period) {
     this.isDeleting = false;
 };
 
-TxtType.prototype.tick = function() {
+TxtType.prototype.tick = function () {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
 
@@ -90,12 +90,12 @@ TxtType.prototype.tick = function() {
         delta = 500;
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
         that.tick();
     }, delta);
 };
 
-window.onload = function() {
+window.onload = function () {
     var elements = document.getElementsByClassName("typewrite");
     for (var i = 0; i < elements.length; i++) {
         var toRotate = elements[i].getAttribute("data-type");
@@ -111,12 +111,12 @@ window.onload = function() {
     document.body.appendChild(css);
 };
 
-india.addEventListener("click", function() {
+india.addEventListener("click", function () {
     promptM.classList.remove("dsp-none");
     promptMessage.innerHTML = e;
 
     let closeIndia = document.getElementById("closeIndia");
-    closeIndia.addEventListener("click", function() {
+    closeIndia.addEventListener("click", function () {
         promptM.classList.add("dsp-none");
     });
 });
