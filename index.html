@@ -1,270 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- test -->
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/metadata/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/metadata/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/metadata">
-    <link rel="manifest" href="./assets/metadata/site.webmanifest">
-
+    <title>Document</title>
     <style>
-        #init {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            background-color: #edf3ff;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
+        * {
+            background-color: black;
+            overflow: hidden;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box !important;
+            -webkit-box-sizing: border-box !important;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-tap-highlight-color: transparent;
+            /* scroll-behavior: smooth; */
+            /* overflow: hidden; */
+        }
+
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background-color: #f2f4fb;
+            color: #a1a1a1 !important;
+            font: 400 16px/24px Roboto, Noto Sans, Noto Sans JP, Noto Sans KR, Noto Naskh Arabic, Noto Sans Thai, Noto Sans Hebrew,
+                Noto Sans Bengali, sans-serif !important;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: initial !important;
+        }
+
+        #root {
+            overflow: hidden;
+        }
+
+        .center {
             display: flex;
-            align-items: center;
             justify-content: center;
-            display: -webkit-box;
-            display: -webkit-flex;
-            -webkit-align-items: center;
-            -webkit-justify-content: center;
+            align-items: center;
+        }
+
+        .full-expand {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .banner {
+            display: flex;
             flex-direction: column;
-            -webkit-flex-direction: column;
-            z-index: 1;
         }
 
-        .spinner-container {
-            -webkit-animation: rotate 2s linear infinite;
-            animation: rotate 2s linear infinite;
-            z-index: 2;
+        .banner>h2 {
+            font-size: 6vw;
         }
 
-        .spinner-path {
-            stroke-dasharray: 1, 150;
-            stroke-dashoffset: 0;
-            stroke: #acb9bf;
-            stroke-linecap: round;
-            -webkit-animation: dash 1.5s ease-in-out infinite;
-            animation: dash 1.5s ease-in-out infinite;
-        }
-
-        @keyframes rotate {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @-webkit-keyframes rotate {
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes dash {
-            0% {
-                stroke-dasharray: 1, 150;
-                stroke-dashoffset: 0;
-            }
-
-            50% {
-                stroke-dasharray: 90, 150;
-                stroke-dashoffset: -35;
-            }
-
-            100% {
-                stroke-dasharray: 90, 150;
-                stroke-dashoffset: -124;
-            }
-        }
-
-        @-webkit-keyframes dash {
-            0% {
-                stroke-dasharray: 1, 150;
-                stroke-dashoffset: 0;
-            }
-
-            50% {
-                stroke-dasharray: 90, 150;
-                stroke-dashoffset: -35;
-            }
-
-            100% {
-                stroke-dasharray: 90, 150;
-                stroke-dashoffset: -124;
-            }
+        .banner>h6 {
+            color: #777 !important;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 1.5px;
+            font-size: 1vw;
         }
     </style>
-
-    <!--Awesome fonts-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <title>Sole Software Solutions</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/hamburger.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-
-    <div id="init">
-        <svg class="spinner-container" width="50" height="50" viewBox="0 0 44 44">
-            <circle class="spinner-path" cx="22" cy="22" r="20" fill="none" stroke-width="4"></circle>
-        </svg>
+    <div class="center full-expand banner">
+        <h2>Sole</h2>
+        <h6>Something Wonderful is Coming...</h6>
     </div>
-
-
-    <div id="main" class="prel h100" style="display: none;">
-
-        <div id="prompt" class="prompt pfx w100 h100 dsp-none">
-            <div class="prompt-container pabs">
-
-                <div class="pabs t0 cancel lhinit cp dsp-none">&#x292B;</div>
-                <div id="promptMessage" class="prompt-message text-center p12">
-
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Navbar -->
-        <nav class="pfx fl">
-            <div class="toggle pabs" id="toggle">
-                <div class="burger hamburger" id="burger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </div>
-            </div>
-
-            <div class="m-logo lhinit dsp-none">Sole Software</div>
-
-            <div class="content prel fl flc flsb h100 w100">
-                <a href="./" class="logo fl flc"></a>
-                <div class="cnt fl flc">
-                    <a class="navEl fl flc cp active home" href="#home">
-                        Home
-                    </a>
-                    <a class="navEl fl flc cp about" href="#">
-                        About
-                    </a>
-                    <a class="navEl fl flc cp " href="#">
-                        Services
-                    </a>
-
-                    <a class="navEl fl flc cp projects" href="#">
-                        Products
-                    </a>
-                    <a class="navEl fl flc cp contact" href="#contact">
-                        Contact Us
-                    </a>
-                </div>
-                <div id="india" class="fl flc cp india">
-                    <img src="./assets/images/svg/india.svg" alt="Sole Software Solutions made in India">
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar -->
-
-        <!-- main -->
-        <main>
-            <section id="home" class="main prel fl flc h100vh">
-                <div class="shapes pabs t0 w100 h100">
-                    <div class="lander-top-corner pabs t0"></div>
-                    <svg class="svg-blob pabs" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <style type="text/css">
-                            path {
-                                fill: url(#MyGradient)
-                            }
-                        </style>
-                        <defs>
-                            <linearGradient id="MyGradient">
-                                <stop offset="5%" stop-color="#99c3fa" />
-                                <stop offset="95%" stop-color="#006eff" />
-                            </linearGradient>
-                        </defs>
-                        <path
-                            d="M60.4,-47C74.9,-29.9,81,-5,73.3,11.9C65.6,28.9,44.1,37.8,22.8,48.5C1.5,59.2,-19.5,71.7,-34.7,66.5C-49.9,61.3,-59.3,38.5,-63.4,15.8C-67.5,-6.9,-66.4,-29.5,-54.9,-45.8C-43.5,-62.2,-21.7,-72.4,0.6,-72.8C22.9,-73.3,45.9,-64.1,60.4,-47Z"
-                            transform="translate(100 100)" />
-                    </svg>
-                </div>
-                <div class="cont prel w100 h100 fl flc">
-                    <div class="prel fl flc flsb w100 h100">
-                        <div class="fl flc w100 h100 lander-title lhinit anim-scroll">Web & Mobile Development</div>
-                        <div class="fl flc w100 h100 lander-img">
-                            <img src="./assets/images/img/lander-img.png" loading="lazy" alt="banner development image"
-                                height="60%" style="margin-top: 2rem;">
-                        </div>
-                        <div class="pabs studio-logo">Studio</div>
-                    </div>
-
-                    <div class="pabs b0 w100 text-center p12 sloganText anim-scroll">
-                        We Develop
-                        <a href="" class="typewrite" data-period="1000"
-                            data-type='[ "Websites", "Android Apps", "iOS Apps"]'>
-                            <span class="wrap"></span>
-                        </a> for You
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!-- main -->
-
-
-        <!-- footer -->
-        <footer id="contact">
-            <div class="column ">
-                <a class="footer_title ">Sole Software Solutions</a>
-                <a>
-                    A one-stop solution for all your information technology needs and now, we are trying to expand
-                    ourselves and endeavor our presence felt across the whole world.
-                </a>
-
-            </div>
-
-            <div class="column ">
-                <a class="footer_title ">Get In Touch</a>
-                <a href="mailto:solesoftwaresolutions@gmail.com " title="Email "><i class="fas fa-envelope "></i>
-                    solesoftwaresolutions@gmail.com</a>
-                <div class="fl">
-
-                    <a href="https://www.instagram.com/solesoftware/" class="icon " title="Instagram "
-                        class="fl flc "><i class="fab fa-instagram "></i></a>
-                    <a href="https://www.linkedin.com/company/solesoftware/" class="icon " title="Linkedin "
-                        class="fl flc "><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/SoleSoftwareSolutions" class="icon " title="Twitter " class="fl flc "><i
-                            class="fab fa-github "></i></a>
-                </div>
-
-            </div>
-            <div class="sub-footer w100 text-center ">
-                © CopyRights
-                <script>
-                    document.write(new Date().getFullYear());
-                </script> ONLINE SOFTWARE | All rights reserved
-            </div>
-        </footer>
-        <!-- footer -->
-
-    </div>
-
-    <script src="./init.js"></script>
-    <script src="./index.js"></script>
-    <script src="./anim.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
-        crossorigin="anonymous "></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js "
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN "
-        crossorigin="anonymous "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV "
-        crossorigin="anonymous "></script>
-
-    <script src="./assets/js/jquery.js"></script>
-
 </body>
 
 </html>
